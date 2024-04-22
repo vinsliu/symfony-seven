@@ -13,8 +13,15 @@ class MainController extends AbstractController
     {
         $coffeCount = 45;
 
+        $myCoffee = [
+            'name' => 'Coffee Shop',
+            'owner' => 'Vins Liu',
+            'status' => 'In development'
+        ];
+
         return $this->render('main/homepage.html.twig', [
             'numberOfCoffee' => $coffeCount,
+            'myCoffee' => $myCoffee,
         ]);
     }
 }
