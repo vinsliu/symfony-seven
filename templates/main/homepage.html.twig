@@ -10,10 +10,10 @@
 
 	<div>
 		Browse through
-		{{ numberOfCoffee }}
+		{{ coffee|length }}
 		Coffee !
 
-		{% if numberOfCoffee > 40 %}
+		{% if coffee|length > 2 %}
 			<p>
 				{# Is this much of coffee enough ? #}
 				That is quite a number of Coffee !
@@ -27,19 +27,19 @@
 			<tr>
 				<th>Name</th>
 				<td>
-					{{ myCoffee.name|upper }}
+					{{ myCoffee.name }}
 				</td>
 			</tr>
 			<tr>
-				<th>Owner</th>
+				<th>Origin</th>
 				<td>
-					{{ myCoffee.owner }}
+					{{ myCoffee.origin }}
 				</td>
 			</tr>
 			<tr>
-				<th>Status</th>
+				<th>Notes</th>
 				<td>
-					{{ myCoffee.status }}
+					{{ myCoffee.notes }}
 				</td>
 			</tr>
 		</table>
