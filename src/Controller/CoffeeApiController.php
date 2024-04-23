@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Model\Coffee;
+use Psr\Log\LoggerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
@@ -10,8 +11,9 @@ use Symfony\Component\Routing\Attribute\Route;
 class CoffeeApiController extends AbstractController
 {
     #[Route('/api/coffee')]
-    public function getCollection(): Response
+    public function getCollection(LoggerInterface $logger): Response
     {
+$logger->info('Coffee variety retrieved');
         $coffees = [
             new Coffee(
                 1,
