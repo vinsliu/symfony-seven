@@ -37,4 +37,14 @@ class CoffeeRepository
 
         ];
     }
+
+    public function find(int $id): ?Coffee
+    {
+        foreach ($this->findAll() as $coffee) {
+            if ($coffee->getId() === $id) {
+                return $coffee;
+            }
+        }
+        return null;
+    }
 }

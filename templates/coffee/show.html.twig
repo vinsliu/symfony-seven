@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{coffee.name}}
+{% endblock %}
+
+{% block body %}
+	<h1>
+		{{coffee.name}}
+	</h1>
+
+	<table>
+		<tbody>
+			<tr>
+				<th>Origin</th>
+				<td>{{ coffee.origin }}</td>
+			</tr>
+			<tr>
+				<th>Notes</th>
+				<td>{{ coffee.notes }}</td>
+			</tr>
+		</tbody>
+	</table>
+{% endblock %}

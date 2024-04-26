@@ -27,7 +27,9 @@
 			<tr>
 				<th>Name</th>
 				<td>
-					{{ myCoffee.name }}
+					<a href=" {{ path('app_coffee_show', {id: myCoffee.id}) }} ">
+						{{ myCoffee.name }}
+					</a>
 				</td>
 			</tr>
 			<tr>
