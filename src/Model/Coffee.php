@@ -9,6 +9,7 @@ class Coffee
         private string $name,
         private string $origin,
         private string $notes,
+        private CoffeeStatusEnum $status,
     ) {
     }
 
@@ -42,5 +43,27 @@ class Coffee
     public function getnotes()
     {
         return $this->notes;
+    }
+
+    /**
+     * Get the value of status
+     */
+    public function getStatus(): CoffeeStatusEnum
+    {
+        return $this->status;
+    }
+
+    public function getStatusString(): string
+    {
+        return $this->status->value;
+    }
+
+    public function getStatusImageFilename(): string
+    {
+        return match ($this->status) {
+            CoffeeStatusEnum::COMPLETED => 'images/status-complete.png',
+            CoffeeStatusEnum::IN_PROGRESS => 'images/status-in-progress.png',
+            CoffeeStatusEnum::WAITING => 'images/status-waiting.png',
+        };
     }
 }

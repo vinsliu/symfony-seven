@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Model\Coffee;
+use App\Model\CoffeeStatusEnum;
 use Psr\Log\LoggerInterface;
 
 class CoffeeRepository
@@ -21,18 +22,21 @@ class CoffeeRepository
                 "Arabica",
                 "Various",
                 "Fruity, acidic",
+                CoffeeStatusEnum::COMPLETED,
             ),
             new Coffee(
                 2,
                 "Robusta",
                 "Africa",
                 "Strong, bitter",
+                CoffeeStatusEnum::IN_PROGRESS,
             ),
             new Coffee(
                 3,
                 "Liberica",
                 "Southeast Asia",
                 "Smokey, woody",
+                CoffeeStatusEnum::WAITING,
             )
 
         ];
